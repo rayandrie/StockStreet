@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-6 phone-margin-top-bot">
         <div class="card background-coy-color">
           <!-- Your Stocks Header -->
           <div class="card-header">

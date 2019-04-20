@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-6 phone-margin-top-bot">
       <div class="card background-coy-color">
         <div class="card-header">
           Today's News:

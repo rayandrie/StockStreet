@@ -58,3 +58,17 @@
 .btn-warning {
   background-color: #FCD503 !important;
 }
+
+/* For Phones */
+.phone-margin-top-bot {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* For Phones */
+@media (max-width: 576px) {
+  .phone-margin-top-bot {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
