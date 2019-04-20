@@ -1,21 +1,25 @@
 /* Set Dark Mode background color */
-body {
+.dark-mode-bg {
   background-color: #343a40!important;
 }
 
+/* Set Main Yellow Color Background */
 .background-coy-color {
   background-color: #FCD503 !important;
 }
 
+/* Set Main Yellor Color Font */
 .company-color {
   color: #FCD503 !important;
 }
 
-/* Make on hover to be yellow color */
+/* Make on hover to be light blue color */
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #70FCFF !important;
+  /* color: #38A0FF !important; */
+  color: #007bff !important;
 }
 
+/* A ten pixel margin left and right */
 .ten-pixel-margin {
   margin: 0 10px 0 10px;
 }
@@ -25,18 +29,18 @@ body {
   font-weight: bold !important;
 }
 
-/* Margin between each other (top and bottom) */
+/* Margin between each other top and bottom */
 .top-bot-margin {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
 }
 
-/* Set Card Color */
+/* Set Card Background Color */
 .bg-my-color {
   background-color: #FCD503 !important;
 }
 
-/* Set Card Text */
+/* Set Card Text Color */
 .text-my-color {
   color: #007bff !important;
 }

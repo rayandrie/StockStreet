@@ -1,0 +1,26 @@
+body, html {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.login-image {
+  background-image: url('../Components/images/login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+/* For Phones */
+@media (max-width: 576px) {
+  .login-image {
+    background-image: none;
+    background-color: #FCD503;  
+    height: 10vh;
+  }
+}
+
+/* Slight Right Margin */
+.slight-right-margin {
+  margin-right: 1%;
+}

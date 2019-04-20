@@ -13,12 +13,12 @@
   <!-- JS Links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
-<body>
+<body class="dark-mode-bg">
   <!-- Nav Bar -->
   <?php include '../Components/nav-bar.php'; ?>
   <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid background-coy-color">
-    <div class="container text-center">
+  <div class="jumbotron jumbotron-fluid jumbo-img">
+    <div class="container company-color text-center">
       <h1 class="display-3 bold-my-text">Invest, Commision-Free!</h1>
       <p class="lead bold-my-text"> With StockStreet, you can invest in your favourite NASDAQ stocks, right from your phone or desktop.</p>
       <hr class="my-4">

@@ -1,0 +1,19 @@
+body {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  background-image: url('../Components/images/signup2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+/* Slight Right Margin */
+.slight-right-margin {
+  margin-right: 2%;
+}
+
+/* Padding */
+.jumbo-padding {
+  padding: 4rem 2rem;
+}

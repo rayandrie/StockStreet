@@ -1,3 +1,15 @@
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  height: 100%;
+}
+
 .jumbotron {
   padding: 1rem 0.5rem;
+}
+
+.jumbo-img {
+  background-image: url('../Components/images/index2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
