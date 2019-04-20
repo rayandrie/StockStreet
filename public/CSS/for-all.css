@@ -19,14 +19,13 @@
   color: #007bff !important;
 }
 
+.blue-font-color {
+  color: #007bff !important;
+}
+
 /* A ten pixel margin left and right */
 .ten-pixel-margin {
   margin: 0 10px 0 10px;
-}
-
-/* Bolden Text */
-.bold-my-text {
-  font-weight: bold !important;
 }
 
 /* Margin between each other top and bottom */
@@ -43,4 +42,19 @@
 /* Set Card Text Color */
 .text-my-color {
   color: #007bff !important;
+}
+
+/* Take Full Height */
+.take-full-height {
+  height: 100%;
+}
+
+/* Change btn-outline-warning button color */
+.btn-outline-warning:hover {
+  background-color: #FCD503 !important;
+}
+
+/* Change btn-warning button color */
+.btn-warning {
+  background-color: #FCD503 !important;
 }

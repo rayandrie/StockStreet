@@ -1,0 +1,18 @@
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  height: 100%;
+}
+
+/* For Scrollable List Group */
+.list-group {
+  /* max-height: 210px; */
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Margin Top Bottom */
+.slight-margin-top-bot {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}

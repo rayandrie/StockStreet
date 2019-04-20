@@ -13,3 +13,17 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+/* Margin Top Bottom */
+.slight-margin-top-bot {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* For Scrollable List Group */
+/* .list-group {
+  max-height: 210px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+} */
