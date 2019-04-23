@@ -13,10 +13,10 @@
   <!-- JS Links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
-<body>
+<body class="dark-mode-bg">
   <div class="container-fluid">
     <div class="row align-items-center dark-mode-bg">
-        <div class="col-sm-6 login-image">
+        <div class="col-sm-6 login-image slight-bot-margin">
             <!-- Background Image Here -->
         </div>
         <!-- Login Form -->
@@ -44,6 +44,9 @@
           </form>
         </div>
     </div>
+  </div>
+  <div class="fixed-bottom phone-footer-block background-coy-color">
+    <!-- Footer Background Yellow Color -->
   </div>
 </body>
 </html>

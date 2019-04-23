@@ -1,6 +1,7 @@
 html, body {
   font-family: 'Ubuntu', sans-serif;
   height: 100%;
+  width: 100%;
 }
 
 .jumbotron {
@@ -18,6 +19,13 @@ html, body {
 .slight-margin-top-bot {
   margin-top: 2%;
   margin-bottom: 2%;
+}
+
+/* For Phones */
+@media (max-width: 576px) {
+  .slightly-smaller-font-h1 {
+    font-size: 2.5rem !important;
+  }
 }
 
 /* For Scrollable List Group */

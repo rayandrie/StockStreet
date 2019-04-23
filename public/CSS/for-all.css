@@ -72,3 +72,20 @@
     margin-bottom: 2%;
   }
 }
+
+
+/* For Tablets */
+@media (max-width: 992px) {
+  .full-width {
+    min-width: 90px;
+    width: 15%;
+  }
+
+  .ten-pixel-margin {
+    margin: 0;
+  }
+
+  .top-margin {
+    margin-top: 1.5%;
+  }
+}

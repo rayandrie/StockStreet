@@ -17,7 +17,7 @@
   <div class="container">
     <div class="row">
       <div class="jumbo-padding company-color text-center">
-        <p class="h1"><i class="fas fa-quidditch slight-right-margin"></i>StockStreet - Make Your Money Move</h1>
+        <p class="h1"><i class="fas fa-quidditch slight-right-margin"></i>StockStreet ~ Make Your Money Move</h1>
         <p class="h3">Invest in the companies you love, commission-free. You want this, you know you do.</p>
       </div>
       <div class="col-sm-8">
@@ -52,7 +52,7 @@
           <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
       </div>
-      <div class="col-sm-4 text-center align-items-center company-color">
+      <div class="col-sm-4 text-center align-items-center company-color phone-slight-top-margin">
         <!-- StockStreet Cool Animation -->
         <i class="fas fa-comments-dollar fa-7x"></i>
         <p class="lead">

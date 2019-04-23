@@ -18,9 +18,20 @@ body, html {
     background-color: #FCD503;  
     height: 10vh;
   }
+
+  /* Slight Bottom Margin for Phone Only */
+  .slight-bot-margin {
+    margin-bottom: 8%;
+  }
+
+  .phone-footer-block {
+    height: 10%;
+  }
 }
 
 /* Slight Right Margin */
 .slight-right-margin {
   margin-right: 1%;
 }
+
+/* Bottom Footer for Phone */

@@ -31,8 +31,10 @@
     </ul>
     <!-- Right Side of Nav Bar -->
     <!-- Goes to Log In Page -->
-    <a class="btn btn-outline-warning nav-link" href="../LoginPage/login.php" role="button">Log In</a>
-    <!-- Goes to Sign Up Page -->
-    <a class="btn btn-warning nav-link ten-pixel-margin" href="../SignUpPage/signup.php" role="button">Sign Up</a>
+    <!-- <div class="btn-group"> -->
+      <a class="btn btn-outline-warning nav-link full-width" href="../LoginPage/login.php" role="button">Log In</a>
+      <!-- Goes to Sign Up Page -->
+      <a class="btn btn-warning nav-link ten-pixel-margin full-width top-margin" href="../SignUpPage/signup.php" role="button">Sign Up</a>
+    <!-- </div> -->
   </div>
 </nav>

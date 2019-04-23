@@ -19,7 +19,7 @@
   <!-- Jumbotron -->
   <div class="jumbotron jumbotron-fluid jumbo-img">
     <div class="container company-color text-center">
-      <h1 class="display-3 font-weight-bold">Invest, Commision-Free!</h1>
+      <h1 class="display-3 font-weight-bold slightly-smaller-font-h1">Invest, Commision-Free!</h1>
       <p class="lead font-weight-bold"> With StockStreet, you can invest in your favourite NASDAQ stocks, right from your phone or desktop.</p>
       <hr class="my-4">
       <h4>Why Invest?</h4>

@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   font-family: 'Ubuntu', sans-serif;
   background-image: url('../Components/images/signup2.jpg');
   background-size: cover;
@@ -16,4 +15,14 @@ body {
 /* Padding */
 .jumbo-padding {
   padding: 4rem 2rem;
+}
+
+@media (max-width: 576px) {
+  body {
+    height: 100%;
+  }
+
+  .phone-slight-top-margin {
+    margin-top: 10%;
+  }
 }
