@@ -22,11 +22,11 @@
       <div class="col align-self-center">
         <div class="card background-coy-color">
           <!-- Your Stocks Header -->
-          <div class="card-header">
+          <div class="card-header header-bg-color company-color">
             Your Portfolio:
           </div>
           <!-- List of User's Stocks and Credits -->
-          <div class="card-body">
+          <div class="card-body body-bg-color">
             <div class="list-group">
               <!-- First List Item -->
               <div href="#" class="list-group-item list-group-item-action active">
@@ -70,11 +70,11 @@
       <div class="col-sm-6">
         <div class="card background-coy-color take-full-height">
           <!-- Your Stocks Header -->
-          <div class="card-header">
+          <div class="card-header header-bg-color company-color">
             Today's Stocks:
           </div>
           <!-- List of Current Day Stocks -->
-          <div class="card-body">
+          <div class="card-body body-bg-color">
             <div class="list-group">
               <!-- First List Item -->
               <div href="#" class="list-group-item list-group-item-action active">
@@ -110,16 +110,16 @@
       <div class="col-sm-6 phone-margin-top-bot">
         <div class="card background-coy-color">
           <!-- Your Stocks Header -->
-          <div class="card-header">
+          <div class="card-header header-bg-color company-color">
             Current Orders:
           </div>
           <!-- List of Orders; Buy and Sell -->
-          <div class="card-body">
+          <div class="card-body body-bg-color">
             <div class="card background-coy-color">
-              <div class="card-header">
+              <div class="card-header header-bg-color company-color">
                 Buys:
               </div>
-              <div class="card-body">
+              <div class="card-body body-bg-color">
                 <!-- List for Buys -->
                 <div class="list-group">
                   <!-- First List Item -->
@@ -153,10 +153,10 @@
               </div>
             </div>
             <div class="card background-coy-color">
-              <div class="card-header">
+              <div class="card-header header-bg-color company-color">
                 Sells:
               </div>
-              <div class="card-body">
+              <div class="card-body body-bg-color">
                 <!-- List for Sells -->
                 <div class="list-group">
                   <!-- First List Item -->

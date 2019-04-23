@@ -34,11 +34,11 @@
       <!-- Stocks -->
       <div class="col-sm-6">
         <div class="card background-coy-color take-full-height">
-          <div class="card-header">
+          <div class="card-header header-bg-color company-color">
             Today's Stocks:
           </div>
           <!-- List of Current Stocks -->
-          <div class="card-body">
+          <div class="card-body body-bg-color">
             <div class="list-group">
               <!-- First List Item -->
               <div href="#" class="list-group-item list-group-item-action background-coy-color">
@@ -73,10 +73,10 @@
       </div>
       <div class="col-sm-6 phone-margin-top-bot">
       <div class="card background-coy-color">
-        <div class="card-header">
+        <div class="card-header header-bg-color company-color">
           Today's News:
         </div>
-        <div class="card-body">
+        <div class="card-body body-bg-color">
           <!-- News Carousel -->
           <div class="bd-example">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">

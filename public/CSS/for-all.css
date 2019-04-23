@@ -8,6 +8,18 @@
   background-color: #FCD503 !important;
 }
 
+/* Set Greyish Background Color */
+.header-bg-color {
+  /* background-color: #f2f2f2 !important; */
+  background-color: #0C0D02 !important;
+}
+
+/* Set Brownish Background Color */
+.body-bg-color {
+  /* background-color: #4E5B68 !important; */
+  background-color: #f2f2f2 !important;
+}
+
 /* Set Main Yellor Color Font */
 .company-color {
   color: #FCD503 !important;
@@ -16,7 +28,7 @@
 /* Make on hover to be light blue color */
 .navbar-dark .navbar-nav .nav-link:hover {
   /* color: #38A0FF !important; */
-  color: #007bff !important;
+  color: #1E7CFF !important;
 }
 
 .blue-font-color {
