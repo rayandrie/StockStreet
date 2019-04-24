@@ -17,7 +17,7 @@
   <!-- Nav Bar -->
   <?php include '../Components/nav-bar.php'; ?>
   <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid jumbo-img">
+  <div class="jumbotron jumbotron-fluid jumbo-img rounded">
     <div class="container company-color text-center">
       <h1 class="display-3 font-weight-bold slightly-smaller-font-h1">Invest, Commision-Free!</h1>
       <p class="lead font-weight-bold"> With StockStreet, you can invest in your favourite NASDAQ stocks, right from your phone or desktop.</p>
@@ -34,7 +34,7 @@
       <!-- Stocks -->
       <div class="col-sm-6">
         <div class="card background-coy-color take-full-height">
-          <div class="card-header header-bg-color company-color">
+          <div class="card-header header-bg-color coy-headings">
             Today's Stocks:
           </div>
           <!-- List of Current Stocks -->
@@ -73,7 +73,7 @@
       </div>
       <div class="col-sm-6 phone-margin-top-bot">
       <div class="card background-coy-color">
-        <div class="card-header header-bg-color company-color">
+        <div class="card-header header-bg-color coy-headings">
           Today's News:
         </div>
         <div class="card-body body-bg-color">
@@ -118,31 +118,36 @@
               </a>
             </div>
           </div>
-          <!-- News Card -->
-          <div class="card mb-3 top-bot-margin bg-my-color">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">News 1</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <!-- News Card -->
-          <div class="card mb-3 top-bot-margin bg-my-color">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">News 2</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <!-- News Card -->
-          <div class="card mb-3 top-bot-margin bg-my-color">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">News 3</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <!-- List of Current News -->
+          <div class="card-body body-bg-color">
+            <div class="list-group">
+              <!-- First List Item -->
+              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">News 1</h5>
+                  <small>3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small>Donec id elit non mi porta.</small>
+              </div>
+              <!-- Second List Item -->
+              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">News 2</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </div>
+              <!-- Third List Item -->
+              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">News 3</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </div>
             </div>
           </div>
         </div>

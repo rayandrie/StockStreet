@@ -16,3 +16,8 @@ html, body {
   margin-top: 2%;
   margin-bottom: 2%;
 }
+
+/* Slight Margin Top */
+.slight-margin-top {
+  margin-top: 2%;
+}

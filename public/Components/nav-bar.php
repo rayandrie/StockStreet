@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="../IndexPage/index.php"><i class="fas fa-quidditch company-color"></i></a>
+<nav class="navbar navbar-expand-lg navbar-dark background-coy-color">
+  <a class="navbar-brand" href="../IndexPage/index.php"><i class="fas fa-quidditch font-bg-color"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,18 +7,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link company-color" href="../IndexPage/index.php">Stock Street<span class="sr-only">(current)</span></a>
+        <a class="nav-link font-bg-color" href="../IndexPage/index.php">Stock Street<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <!-- Clicking this should go to the Home Page if user is logged in-->
-        <a class="nav-link" href="../PortfolioPage/portfolio.php">Portfolio</a>
+        <a class="nav-link font-bg-color" href="../PortfolioPage/portfolio.php">Portfolio</a>
       </li>
       <li class="nav-item">
         <!-- Clicking this should go to -->
-        <a class="nav-link" href="https://www.nerdwallet.com/blog/category/investing/">Investing</a>
+        <a class="nav-link font-bg-color" href="https://www.nerdwallet.com/blog/category/investing/">Investing</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle font-bg-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Learn More
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -32,9 +32,9 @@
     <!-- Right Side of Nav Bar -->
     <!-- Goes to Log In Page -->
     <!-- <div class="btn-group"> -->
-      <a class="btn btn-outline-warning nav-link full-width" href="../LoginPage/login.php" role="button">Log In</a>
+      <a class="btn btn-outline-dark nav-link full-width" href="../LoginPage/login.php" role="button">Log In</a>
       <!-- Goes to Sign Up Page -->
-      <a class="btn btn-warning nav-link ten-pixel-margin full-width top-margin" href="../SignUpPage/signup.php" role="button">Sign Up</a>
+      <a class="btn btn-dark nav-link ten-pixel-margin full-width top-margin" href="../SignUpPage/signup.php" role="button">Sign Up</a>
     <!-- </div> -->
   </div>
 </nav>

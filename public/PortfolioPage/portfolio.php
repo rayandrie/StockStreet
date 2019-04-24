@@ -20,9 +20,9 @@
   <div class="container-fluid">
     <div class="row justify-content-center text-center">
       <div class="col align-self-center">
-        <div class="card background-coy-color">
+        <div class="card background-coy-color slight-margin-top">
           <!-- Your Stocks Header -->
-          <div class="card-header header-bg-color company-color">
+          <div class="card-header header-bg-color coy-headings">
             Your Portfolio:
           </div>
           <!-- List of User's Stocks and Credits -->
@@ -70,7 +70,7 @@
       <div class="col-sm-6">
         <div class="card background-coy-color take-full-height">
           <!-- Your Stocks Header -->
-          <div class="card-header header-bg-color company-color">
+          <div class="card-header header-bg-color coy-headings">
             Today's Stocks:
           </div>
           <!-- List of Current Day Stocks -->
@@ -110,13 +110,13 @@
       <div class="col-sm-6 phone-margin-top-bot">
         <div class="card background-coy-color">
           <!-- Your Stocks Header -->
-          <div class="card-header header-bg-color company-color">
-            Current Orders:
+          <div class="card-header header-bg-color coy-headings">
+            Current Live Orders:
           </div>
           <!-- List of Orders; Buy and Sell -->
           <div class="card-body body-bg-color">
             <div class="card background-coy-color">
-              <div class="card-header header-bg-color company-color">
+              <div class="card-header header-bg-color coy-headings">
                 Buys:
               </div>
               <div class="card-body body-bg-color">
@@ -153,7 +153,7 @@
               </div>
             </div>
             <div class="card background-coy-color">
-              <div class="card-header header-bg-color company-color">
+              <div class="card-header header-bg-color coy-headings">
                 Sells:
               </div>
               <div class="card-body body-bg-color">
