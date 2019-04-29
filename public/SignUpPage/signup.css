@@ -26,3 +26,13 @@ body {
     margin-top: 10%;
   }
 }
+
+/* Left margin */
+.mt-1half {
+  margin-top: .375rem !important;
+}
+
+/* Pill Background Color */
+.very-red-bg {
+  background-color: #FF2A05 !important;
+}

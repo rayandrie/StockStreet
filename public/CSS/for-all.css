@@ -1,6 +1,21 @@
+@font-face {
+  font-family: 'Catherine';
+  src: url('../Constants/Catherine-Regular.ttf') format('truetype');
+}
+
+/* Set Catherine Font Family */
+.cath-font {
+  font-family: 'Catherine' !important;
+}
+
+/* 2em font size */
+.two-em {
+  font-size: 2em;
+}
+
 /* Set Dark Mode background color */
 .dark-mode-bg {
-  background-color: #343a40!important;
+  background-color: #343a40;
   /* background-color: #f2f2f2 !important; */
 }
 
@@ -24,7 +39,7 @@
 
 /* Set Main Yellor Color Font */
 .company-color {
-  color: #FCD503 !important;
+  color: #FCD503;
 }
 
 /* Black Font Color */
@@ -35,6 +50,11 @@
 /* Brownish Font Color */
 .coy-headings {
   color: #000000 !important;
+}
+
+/* White Font */
+.white-font {
+  color: #f2f2f2 !important;
 }
 
 /* Make on hover to be light blue color */
@@ -99,6 +119,24 @@
 /* Change btn-warning button color */
 .btn-warning {
   background-color: #FCD503 !important;
+}
+
+/* Coy Badge Colourings */
+.badge-coy {
+  color: #0C0D02 !important;
+  background-color: #FCD503 !important;
+}
+
+/* On hover, change color of list item */
+/* .hover-bg-change {
+  color: #fff !important;
+  background-color: #007bff !important;
+} */
+
+/* On hover, change color of list item */
+.list-group-item-action:hover {
+  color: #fff !important;
+  background-color: #007bff !important;
 }
 
 /* For Phones */

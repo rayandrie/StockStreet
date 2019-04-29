@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="signup.css">
   <!-- JS Links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <?php require '../Constants/js-constants.php'; ?>
+  <script src="signup.js"></script>
 </head>
 <body>
   <div class="container">
@@ -26,30 +28,39 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputFirstName">First Name</label>
-              <input type="text" class="form-control" id="inputFirstName" name="first-name" placeholder="First Name">
+              <input type="text" class="form-control" id="inputFirstName" name="first-name" placeholder="First Name" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputLastName">Last Name</label>
-              <input type="text" class="form-control" id="inputLastName" name="last-name" placeholder="Last Name">
+              <input type="text" class="form-control" id="inputLastName" name="last-name" placeholder="Last Name" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
           </div>
           <div class="form-group">
             <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
           </div>
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <input class="form-check-input" type="checkbox" id="gridCheck" required>
               <label class="form-check-label" for="gridCheck">
                 I agree to the terms and conditions
               </label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign Up</button>
+          <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-0 bd-highlight">
+              <input type="submit" class="btn btn-primary" value="Sign Up"/>
+            </div>
+            <div class="ml-3 mt-1half bd-highlight" id="errVal">
+              <!-- <h5>
+                <span class="badge badge-pill badge-danger very-red-bg">Error: Never make a number </span>
+              </h5> -->
+            </div>
+          </div>
         </form>
       </div>
       <div class="col-sm-4 text-center align-items-center company-color phone-slight-top-margin">

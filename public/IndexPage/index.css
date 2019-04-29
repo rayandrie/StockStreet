@@ -28,6 +28,16 @@ html, body {
   }
 }
 
+/* Greyish Font */
+.carousel-font {
+  color: #D8D8D8 !important;
+}
+
+/* Text Shadow Effect */
+.shadow-effect {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 /* For Scrollable List Group */
 /* .list-group {
   max-height: 210px;

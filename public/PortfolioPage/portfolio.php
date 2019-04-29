@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="portfolio.css">
   <!-- JS Links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <?php require '../Constants/js-constants.php'; ?>
+  <script src="portfolio.js"></script>
 </head>
 <body class="dark-mode-bg">
   <!-- Nav Bar -->
@@ -38,7 +40,7 @@
                 <small>Donec id elit non mi porta.</small>
               </div>
               <!-- Second List Item -->
-              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+              <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Your Stock 2</h5>
                   <small class="text-muted">3 days ago</small>
@@ -47,7 +49,7 @@
                 <small class="text-muted">Donec id elit non mi porta.</small>
               </div>
               <!-- Third List Item -->
-              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+              <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Your Stock 3</h5>
                   <small class="text-muted">3 days ago</small>
@@ -86,7 +88,7 @@
                 <small>Donec id elit non mi porta.</small>
               </div>
               <!-- Second List Item -->
-              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+              <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Stock 2</h5>
                   <small class="text-muted">3 days ago</small>
@@ -95,7 +97,7 @@
                 <small class="text-muted">Donec id elit non mi porta.</small>
               </div>
               <!-- Third List Item -->
-              <div href="#" class="list-group-item list-group-item-action background-coy-color">
+              <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Stock 3</h5>
                   <small class="text-muted">3 days ago</small>
@@ -132,7 +134,7 @@
                     <small>Donec id elit non mi porta.</small>
                   </div>
                   <!-- Second List Item -->
-                  <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                  <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">Buy Order 2:</h5>
                       <small class="text-muted">3 days ago</small>
@@ -141,7 +143,7 @@
                     <small class="text-muted">Donec id elit non mi porta.</small>
                   </div>
                   <!-- Third List Item -->
-                  <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                  <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">Buy Order 3:</h5>
                       <small class="text-muted">3 days ago</small>
@@ -169,7 +171,7 @@
                     <small>Donec id elit non mi porta.</small>
                   </div>
                   <!-- Second List Item -->
-                  <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                  <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">Sell Order 2:</h5>
                       <small class="text-muted">3 days ago</small>
@@ -178,7 +180,7 @@
                     <small class="text-muted">Donec id elit non mi porta.</small>
                   </div>
                   <!-- Third List Item -->
-                  <div href="#" class="list-group-item list-group-item-action background-coy-color">
+                  <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">Sell Order 3:</h5>
                       <small class="text-muted">3 days ago</small>
