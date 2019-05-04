@@ -12,35 +12,44 @@
   <link rel="stylesheet" href="login.css">
   <!-- JS Links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <?php require '../Constants/js-constants.php'; ?>
+  <script src="login.js"></script>
 </head>
 <body class="dark-mode-bg">
   <div class="container-fluid">
     <div class="row align-items-center dark-mode-bg">
-        <div class="col-sm-6 login-image slight-bot-margin">
+        <div class="col-sm-7 login-image slight-bot-margin">
             <!-- Background Image Here -->
         </div>
         <!-- Login Form -->
-        <div class="col-sm-6 company-color">
+        <div class="col-sm-5 company-color">
           <p class="h3 text-center">
             <i class="fas fa-quidditch slight-right-margin"></i>Welcome to StockStreet
           </p>
           <form>
             <div class="form-group">
               <label for="inputEmail">Email or Username</label>
-              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email/Username">
+              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email/Username" required>
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="inputPassword">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" 
+              <input type="password" class="form-control" id="inputPassword" 
               name="password"
-              placeholder="Password">
+              placeholder="Password" required>
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions</label>
+            <!-- <input type="submit" class="btn btn-primary" value="Login"/> -->
+            <!-- OR -->
+            <div class="d-flex flex-row bd-highlight mb-3">
+              <div class="p-0 bd-highlight">
+                <input type="submit" class="btn btn-primary" value="Login" />
+              </div>
+              <div class="ml-3 mt-1half bd-highlight" id="errVal">
+                <!-- <h5>
+                  <span class="badge badge-pill badge-danger very-red-bg">Error: Never make a number </span>
+                </h5> -->
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
     </div>

@@ -11,7 +11,7 @@
       </li>
       <li class="nav-item">
         <!-- Clicking this should go to the Home Page if user is logged in-->
-        <a class="nav-link font-bg-color" href="../PortfolioPage/portfolio.php">Portfolio</a>
+        <a class="nav-link font-bg-color" id="portfolio-link" href="../PortfolioPage/portfolio.php">Portfolio</a>
       </li>
       <li class="nav-item">
         <!-- Clicking this should go to -->
@@ -31,10 +31,10 @@
     </ul>
     <!-- Right Side of Nav Bar -->
     <!-- Goes to Log In Page -->
-    <!-- <div class="btn-group"> -->
-      <a class="btn btn-outline-dark nav-link full-width" href="../LoginPage/login.php" role="button">Log In</a>
-      <!-- Goes to Sign Up Page -->
-      <a class="btn btn-dark nav-link ten-pixel-margin full-width top-margin" href="../SignUpPage/signup.php" role="button">Sign Up</a>
-    <!-- </div> -->
+    <a class="btn btn-outline-dark nav-link full-width" id="leftButton" href="../LoginPage/login.php" role="button">Log In</a>
+    <!-- <a class="nav-link font-bg-color" id="portfolio-link" href="../PortfolioPage/portfolio.php">Portfolio</a> -->
+    <!-- <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Disabled</a> -->
+    <!-- Goes to Sign Up Page -->
+    <a class="btn btn-dark nav-link ten-pixel-margin full-width top-margin" id="rightButton" href="../SignUpPage/signup.php" role="button">Sign Up</a>
   </div>
 </nav>

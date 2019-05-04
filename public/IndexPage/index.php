@@ -21,11 +21,11 @@
   <!-- Jumbotron -->
   <div class="jumbotron jumbotron-fluid jumbo-img rounded">
     <div class="container company-color text-center">
-      <h1 class="display-3 font-weight-bold slightly-smaller-font-h1">Invest, Commision-Free!</h1>
-      <p class="lead font-weight-bold"> With StockStreet, you can invest in your favourite NASDAQ stocks, right from your phone or desktop.</p>
+      <h1 class="display-3 shadow-effect font-weight-bold slightly-smaller-font-h1">Invest, Commision-Free!</h1>
+      <p class="lead shadow-effect font-weight-bold"> With StockStreet, you can invest in your favourite NASDAQ stocks, right from your phone or desktop.</p>
       <hr class="my-4">
-      <h4 class="cath-font">Why Invest?</h4>
-      <p class="cath-font">Most investment platforms such as stocks, bonds and mutual funds offer good returns on investment over the long term. This return builds and creating your wealth over time. The growth of money is also important to fulfil basic needs in life and investing can help a person to meet long-term life goals easily.</p>
+      <h4 class="cath-font shadow-effect">Why Invest?</h4>
+      <p class="cath-font shadow-effect">Most investment platforms such as stocks, bonds and mutual funds offer good returns on investment over the long term. This return builds and creating your wealth over time. The growth of money is also important to fulfil basic needs in life and investing can help a person to meet long-term life goals easily.</p>
       <!-- Button that goes to Investopedia -->
       <a class="btn btn-primary btn-lg" href="https://www.investopedia.com/university/beginner/" role="button">Learn More</a>
     </div>

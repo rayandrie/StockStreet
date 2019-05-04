@@ -49,7 +49,9 @@ function createStockItem(companyName, price, beta, mktCap, volAvg, changesPerc) 
   let $mktCapBadge = createBadge("badge-coy", "Market Cap: " + mktCap, "<h5>")
   // Need to check whether % increase or decrease
   let $percBadge;
-  if (changesPerc.includes("+")) {
+  if (changesPerc.includes("0.00")) {
+    $percBadge = createBadge("badge-secondary", changesPerc, "<h5>")
+  } else if (changesPerc.includes("+")) {
     $percBadge = createBadge("badge-success", changesPerc, "<h5>")
   } else {
     $percBadge = createBadge("badge-danger", changesPerc, "<h5>")
@@ -174,4 +176,14 @@ function cleanTitle(title) {
     return title
   }
   return title.substring(0, lastDashIndex - 1)
+}
+
+// Cretate the Error Pill that will be shown to users when they have an error
+function createErrorPill(str) {
+  let $header = $("<h5>")
+  let $badge = $("<span>")
+  $badge.addClass("badge badge-pill badge-danger very-red-bg")
+  $badge.append("Error: " + str)
+  $header.append($badge)
+  return $header
 }

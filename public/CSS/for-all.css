@@ -145,6 +145,18 @@
   margin-bottom: 0;
 }
 
+/* Left margin */
+.mt-1half {
+  margin-top: .375rem !important;
+}
+
+/* nav bar grey disabled */
+.nav-grey-disabled {
+  color: #6C757D !important;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* For Phones */
 @media (max-width: 576px) {
   .phone-margin-top-bot {

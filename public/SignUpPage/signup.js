@@ -2,7 +2,7 @@
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault()
-    console.log("In Submit Function!")
+    console.log("In Submit Function of Signup Page!")
     // Form Validation
     const fName = $("#inputFirstName").val()
     const lName = $("#inputLastName").val()
@@ -20,9 +20,9 @@ $(document).ready(function() {
     // Email has to be unique in the DB
     $.ajax({
       method: "POST",
-      url: "../../src/stockBackend.php",
+      url: BACKEND_URL,
       data: {
-        requestType: "USER_SIGN_UP",
+        requestType: USER_SIGN_UP,
         email: email,
         password: password
       }
@@ -32,7 +32,7 @@ $(document).ready(function() {
       // Server-side Validation
       if (results.status == "Failure") {
         // Output Error onto Pill
-        let $valPill = createErrorPill("Email already Exists!")
+        let $valPill = createErrorPill(results.response)
         $("#errVal").append($valPill)
       } else {
         // Set a Session
@@ -49,22 +49,11 @@ $(document).ready(function() {
 function validateSignUp(fName, lName, email, password) {
   let error = ""
   if (!fName || fName === "" || !lName || lName === "") {
-    error = "Please input your Name"
-  } 
-  if (!email || email === "") {
-    error = "Please enter a valid Email"
-  }
-  if (!password || password === "") {
-    error = "Please enter a valid Password"
+    error = "Please input your name."
+  } else if (!email || email === "") {
+    error = "Please enter a valid email."
+  } else if (!password || password === "") {
+    error = "Please enter a valid password."
   } 
   return error
-}
-
-function createErrorPill(str) {
-  let $header = $("<h5>")
-  let $badge = $("<span>")
-  $badge.addClass("badge badge-pill badge-danger very-red-bg")
-  $badge.append("Error: " + str)
-  $header.append($badge)
-  return $header
 }

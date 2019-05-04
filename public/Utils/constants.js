@@ -7,3 +7,7 @@ const FMP_API = "https://financialmodelingprep.com/api/company/profile/";
 const INDEX_COYS_STR = "AAPL,AMZN,MSFT,ATVI,GOOG,INTC,ADBE,BIDU,TSLA";
 const ALL_COYS_STR = "AAPL,AMZN,MSFT,ATVI,GOOG,INTC,ADBE,BIDU,TSLA,NFLX,AMAT,CSCO,CMCSA,AAL,QCOM,NVDA";
 
+// Backend URL
+const BACKEND_URL = "../../src/StockBackend.php";
+const USER_SIGN_UP = "USER_SIGN_UP";
+const USER_LOGIN = "USER_LOGIN";
