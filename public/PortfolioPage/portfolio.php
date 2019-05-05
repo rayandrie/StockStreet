@@ -29,35 +29,43 @@
           </div>
           <!-- List of User's Stocks and Credits -->
           <div class="card-body body-bg-color">
-            <div class="list-group">
+            <div class="list-group" id="portfolio-list">
               <!-- First List Item -->
-              <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Your Stock 1</h5>
-                  <small>3 days ago</small>
+              <!-- <div class="list-group-item list-group-item-action dark-mode-bg company-color">
+                <div class="d-flex justify-content-between">
+                  <h3><span class="badge badge-coy">AAPL | 30 Shares</span></h3>
+                  <h3><span class="badge badge-light">Bought for: 12222</span></h3>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-              </a>
-              <!-- Second List Item -->
-              <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Your Stock 2</h5>
-                  <small class="text-muted">3 days ago</small>
+                <div class="d-flex justify-content-between">
+                  <h5><span class="badge badge-coy">Sell Price Today: 12345</span></h5>
+                  <h5><span class="badge badge-secondary">Profit: 3%</span></h5>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
-              <!-- Third List Item -->
-              <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Your Stock 3</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
+                <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#sellPortfolioModal">Block level button</button>
+              </div> -->
             </div>
+          </div>
+          <div id="allPortfolioModals">
+            <!-- Modal for List Item (Below) -->
+            <!-- <div class="modal fade" id="sellPortfolioModal" tabindex="-1" role="dialog" aria-labelledby="sellModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="sellPortfolioLabel">Are you sure you want to sell your AAPL Stocks?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    You will gain 5858 Credits.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Sell</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- Modal for List Item (Above) -->
           </div>
         </div>
       </div>
@@ -68,7 +76,7 @@
   </div>
   <!-- Container for Current Stock Prices, Current Orders -->
   <div class="container-fluid">
-    <div class="row text-center">
+    <div class="row">
       <div class="col-sm-6">
         <div class="card background-coy-color take-full-height">
           <!-- Your Stocks Header -->
@@ -77,40 +85,28 @@
           </div>
           <!-- List of Current Day Stocks -->
           <div class="card-body body-bg-color">
-            <div class="list-group">
-              <!-- First List Item -->
-              <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Stock 1</h5>
-                  <small>3 days ago</small>
+            <div class="list-group" id="Stocks">
+              <!-- List Item -->
+              <!-- <div href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
+                <div class="d-flex justify-content-between">
+                  <h3><span class="badge badge-coy">AAPL | Apple Inc.</span></h3>
+                  <h3><span class="badge badge-light">Price</span></h3>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-              </a>
-              <!-- Second List Item -->
-              <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Stock 2</h5>
-                  <small class="text-muted">3 days ago</small>
+                <div class="d-flex justify-content-between">
+                  <h5><span class="badge badge-coy">Market Cap: 9000000</span></h5>
+                  <h5><span class="badge badge-secondary">Perc</span></h5>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
-              <!-- Third List Item -->
-              <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Stock 3</h5>
-                  <small class="text-muted">3 days ago</small>
+                <div class="d-flex justify-content-between">
+                  <h5><span class="badge badge-coy">Avg Volume: 9000000</span></h5>
+                  <h5><span class="badge badge-info">ß: </span></h5>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
       <div class="col-sm-6 phone-margin-top-bot">
-        <div class="card background-coy-color">
+        <div class="card background-coy-color take-full-height">
           <!-- Your Stocks Header -->
           <div class="card-header cath-font two-em font-weight-bolder header-bg-color coy-headings">
             Current Live Orders:
@@ -118,79 +114,49 @@
           <!-- List of Orders; Buy and Sell -->
           <div class="card-body body-bg-color">
             <div class="card background-coy-color">
-              <div class="card-header cath-font two-em font-weight-bolder header-bg-color coy-headings">
-                Buys:
-              </div>
-              <div class="card-body body-bg-color">
-                <!-- List for Buys -->
-                <div class="list-group">
-                  <!-- First List Item -->
-                  <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Buy Order 1:</h5>
-                      <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small>Donec id elit non mi porta.</small>
-                  </a>
-                  <!-- Second List Item -->
-                  <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Buy Order 2:</h5>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a>
-                  <!-- Third List Item -->
-                  <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Buy Order 3:</h5>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card background-coy-color">
-              <div class="card-header cath-font two-em font-weight-bolder header-bg-color coy-headings">
-                Sells:
+              <!-- Full Sell List (Below) -->
+              <div class="card-header cath-font two-em font-weight-bolder header-bg-color coy-headings text-center">
+                You have: <span class="cath-font font-italic" id="userCredits"></span>
               </div>
               <div class="card-body body-bg-color">
                 <!-- List for Sells -->
-                <div class="list-group">
+                <div class="list-group" id="allSellOrders">
                   <!-- First List Item -->
-                  <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Sell Order 1:</h5>
-                      <small>3 days ago</small>
+                  <!-- <div class="list-group-item list-group-item-action dark-mode-bg company-color">
+                    <div class="d-flex justify-content-between">
+                      <h5><span class="badge badge-coy">AAPL | Selling 30 Shares</span></h5>
+                      <h5><span class="badge badge-info">Buy Price/Share: 12345</span></h5>
+                      <h5><span class="badge badge-light">Profit to be Made: +150</span></h5>
                     </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small>Donec id elit non mi porta.</small>
-                  </a>
-                  <!-- Second List Item -->
-                  <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Sell Order 2:</h5>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a>
-                  <!-- Third List Item -->
-                  <a href="#" class="list-group-item list-group-item-action dark-mode-bg company-color">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Sell Order 3:</h5>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a>
+                    <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#sellOrdersModal">Buy Shares</button>
+                  </div> -->
                 </div>
               </div>
             </div>
+            <!-- Full Sell List (Above) -->
+            <!-- Modal for List Item (Below) -->
+            <div id="allBuyModals">
+              <!-- <div class="modal fade" id="buyOrdersModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="buyModalLabel">Are you sure you want to buy these Apple Stocks?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      You will lose 5858 Credits.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Buy</button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <!-- Modal for List Item (Above) -->
           </div>
         </div>
       </div>

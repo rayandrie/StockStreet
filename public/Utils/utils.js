@@ -1,5 +1,5 @@
 // Function to create a Session
-function setSession(user_email) {
+function setSession(user_email, credits) {
   const endPos = user_email.indexOf('@')
   if (endPos != -1) {
     const username = user_email.substring(0, endPos)
@@ -9,6 +9,7 @@ function setSession(user_email) {
     $.session.set('logged in', 'true')
     $.session.set('email', user_email)
     $.session.set('username', username)
+    $.session.set('credits', credits)
   }
 }
 
@@ -19,7 +20,7 @@ function callStockAPIIndex(selectInfo) {
     url: `${FMP_API}${selectInfo}?datatype=json`
   }).done(function(results) {
     const allStocks = JSON.parse(results)
-    console.log(allStocks)
+    // console.log(allStocks)
     // Add to Stocks List
     for (let stock in allStocks) {
       if (allStocks.hasOwnProperty(stock)) {
@@ -97,6 +98,9 @@ function cleanNumber(str) {
   let result = ""
   while (Math.floor(num / 1000) != 0) {
     remainder = num % 1000
+    if (remainder === 0) {
+      remainder = "000"
+    }
     result = "," + remainder.toString() + result
     num = Math.floor(num / 1000)
   }

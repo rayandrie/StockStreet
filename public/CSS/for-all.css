@@ -8,6 +8,16 @@
   font-family: 'Catherine' !important;
 }
 
+/* Set Ubuntu Font */
+.ubuntu-font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* 1em font size */
+.one-em {
+  font-size: 1em !important;
+}
+
 /* 2em font size */
 .two-em {
   font-size: 2em;
@@ -157,6 +167,11 @@
   cursor: default;
 }
 
+/* Arvo Font */
+.arvo-font {
+  font-family: 'Arvo', serif;
+}
+
 /* For Phones */
 @media (max-width: 576px) {
   .phone-margin-top-bot {
@@ -164,7 +179,6 @@
     margin-bottom: 2%;
   }
 }
-
 
 /* For Tablets */
 @media (max-width: 992px) {
