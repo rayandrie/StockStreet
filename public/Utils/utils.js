@@ -1,15 +1,11 @@
 // Function to create a Session
-function setSession(user_email, credits) {
+function setSession(user_email) {
   const endPos = user_email.indexOf('@')
   if (endPos != -1) {
     const username = user_email.substring(0, endPos)
-    // sessionStorage.setItem('logged in', true)
-    // sessionStorage.setItem('email', user_email)
-    // sessionStorage.setItem('username', username)
     $.session.set('logged in', 'true')
     $.session.set('email', user_email)
     $.session.set('username', username)
-    $.session.set('credits', credits)
   }
 }
 
@@ -26,6 +22,10 @@ function callStockAPIIndex(selectInfo) {
       if (allStocks.hasOwnProperty(stock)) {
         const curr = allStocks[stock]
         // console.log(curr)
+        // For ComCast
+        if (stock == "CMCSA") {
+          curr.companyName = "Comcast Corporation"
+        }
         const title = stock + " | " + curr.companyName
         const mktCap = cleanNumber(curr.MktCap)
         const volAvg = cleanNumber(curr.VolAvg)
@@ -39,23 +39,23 @@ function callStockAPIIndex(selectInfo) {
 // Function to create Stock Item (companyName, Price, Beta, MktCap, ChangesPerc)
 function createStockItem(companyName, price, beta, mktCap, volAvg, changesPerc) {
   // Create inner div of coyName and Price
-  let $coyBadge = createBadge("badge-coy", companyName, "<h3>")
-  let $priceBadge = createBadge("badge-light", "$" + price, "<h3>")
+  let $coyBadge = createBadge("badge-coy", companyName, "<h6>")
+  let $priceBadge = createBadge("badge-light", "$" + price, "<h6>")
   let $firstDiv = $("<div>")
   $firstDiv.addClass("d-flex justify-content-between")
   $firstDiv.append($coyBadge)
   $firstDiv.append($priceBadge)
 
   // Create inner div of marketCap and Percentage
-  let $mktCapBadge = createBadge("badge-coy", "Market Cap: " + mktCap, "<h5>")
+  let $mktCapBadge = createBadge("badge-coy", "Market Cap: " + mktCap, "<h6>")
   // Need to check whether % increase or decrease
   let $percBadge;
   if (changesPerc.includes("0.00")) {
-    $percBadge = createBadge("badge-secondary", changesPerc, "<h5>")
+    $percBadge = createBadge("badge-secondary", changesPerc, "<h6>")
   } else if (changesPerc.includes("+")) {
-    $percBadge = createBadge("badge-success", changesPerc, "<h5>")
+    $percBadge = createBadge("badge-success", changesPerc, "<h6>")
   } else {
-    $percBadge = createBadge("badge-danger", changesPerc, "<h5>")
+    $percBadge = createBadge("badge-danger", changesPerc, "<h6>")
   }
   let $secondDiv = $("<div>")
   $secondDiv.addClass("d-flex justify-content-between")
@@ -63,8 +63,8 @@ function createStockItem(companyName, price, beta, mktCap, volAvg, changesPerc) 
   $secondDiv.append($percBadge)
 
   // Create inner div of Avg Volume and Beta
-  let $volBadge = createBadge("badge-coy", "Avg Volume: " + volAvg, "<h5>")
-  let $betaBadge = createBadge("badge-info", "ß: " + beta, "<h5>")
+  let $volBadge = createBadge("badge-coy", "Avg Volume: " + volAvg, "<h6>")
+  let $betaBadge = createBadge("badge-info", "ß: " + beta, "<h6>")
   let $thirdDiv = $("<div>")
   $thirdDiv.append($volBadge)
   $thirdDiv.append($betaBadge)
@@ -72,7 +72,7 @@ function createStockItem(companyName, price, beta, mktCap, volAvg, changesPerc) 
   // Create outer div of list item and append all
   let $outerDiv = $("<div>")
   $outerDiv.attr('href', '#')
-  $outerDiv.addClass("list-group-item list-group-item-action dark-mode-bg company-color")
+  $outerDiv.addClass("list-group-item list-group-item-action dark-mode-bg company-color wrap-words")
   $outerDiv.append($firstDiv)
   $outerDiv.append($secondDiv)
   $outerDiv.append($thirdDiv)
@@ -184,7 +184,7 @@ function cleanTitle(title) {
 
 // Cretate the Error Pill that will be shown to users when they have an error
 function createErrorPill(str) {
-  let $header = $("<h5>")
+  let $header = $("<h6>")
   let $badge = $("<span>")
   $badge.addClass("badge badge-pill badge-danger very-red-bg")
   $badge.append("Error: " + str)

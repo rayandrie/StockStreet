@@ -1,9 +1,21 @@
 $(document).ready(function() {
   // If we're here, we definitely have a logged in user
   const username = $.session.get('username')
-  // Set the # of Credits the user has
-  $('#userCredits').append('$' + $.session.get('credits'))
   populateWholePage()
+  // Set the # of Credits the user has
+  $.ajax({
+    method: "GET",
+    url: BACKEND_URL,
+    data: {
+      requestType: GET_CREDITS,
+      email: $.session.get('email')
+    }
+  }).done(function(results) {
+    results = JSON.parse(results)
+    console.log(GET_CREDITS, results)
+    $.session.set('credits', results.credits)
+    $('#userCredits').append('$' + $.session.get('credits'))
+  })
 })
 
 // Global Variables
@@ -23,6 +35,10 @@ function populateWholePage() {
       if (allStocks.hasOwnProperty(stock)) {
         const curr = allStocks[stock]
         // console.log(curr)
+        // For ComCast
+        if (stock == "CMCSA") {
+          curr.companyName = "Comcast Corporation"
+        }
         const title = stock + " | " + curr.companyName
         const mktCap = cleanNumber(curr.MktCap)
         const volAvg = cleanNumber(curr.VolAvg)
@@ -33,15 +49,6 @@ function populateWholePage() {
     }
     // After this, call the backend to get the user portfolio
     genPortfolio()
-
-    // TESTING TODO
-    // Create Selling Item
-    // let qw = createSellingListItem("AAPL", 100, 200, "100,100")
-    // $('#allSellOrders').append(qw)
-    // // Create Selling Modal
-    // let sellModal = createModal(false, "AAPL", 100, 200, "100,100")
-    // $('#allBuyModals').append(sellModal)
-
   })
 }
 
@@ -55,7 +62,7 @@ function genSellOrders() {
     }
   }).done(function(results) {
     results = JSON.parse(results)
-    console.log(results)
+    console.log(GET_ALL_ORDERS, results)
     for (let i = 0; i < results.length; i++) {
       let curr = results[i]
       const symbol = curr.symbol_abbr
@@ -63,10 +70,52 @@ function genSellOrders() {
       let sellListItem = createSellingListItem(symbol, curr.order_qty, $.session.get(symbol))
       $('#allSellOrders').append(sellListItem)
       // Create Selling Modal
-      let sellModal = createModal(false, symbol, curr.order_qty, $.session.get(symbol), null)
+      let sellModal = createModal(false, symbol, curr.order_qty, $.session.get(symbol), null, curr.order_id)
       $('#allBuyModals').append(sellModal)
     }
   }) 
+}
+
+function genPendingOrders() {
+  $.ajax({
+    method: "GET",
+    url: BACKEND_URL,
+    data: {
+      requestType: GET_PENDING_ORDERS_OF_USER,
+      email: $.session.get('email')
+    }
+  }).done(function(results) {
+    results = JSON.parse(results)
+    console.log(GET_PENDING_ORDERS_OF_USER, results)
+    for (let i = 0; i < results.length; i++) {
+      let curr = results[i]
+      // Create Pending Auctions List Item
+      let pendingAuctionListItem = createPendingOrderItem(curr.symbol_abbr, curr.order_qty, $.session.get(curr.symbol_abbr))
+      $('#pendingOrders').append(pendingAuctionListItem)
+    }
+  })
+}
+
+function createPendingOrderItem(symbol, numQty, currPrice) {
+  // Create Inner Div
+  $innerDiv = $('<div>')
+  $innerDiv.addClass('d-flex justify-content-between')
+  let headingText = symbol + " | " + numQty + " Shares"
+  let $coyBadge = createBadge("badge-coy", headingText, "<h6>")
+  let infoText = "Today's Price: $" + currPrice
+  let $infoBadge = createBadge("badge-info", infoText, "<h6>")
+  // let $statusBadge = createBadge("badge-light", "Order Status: Open", "<h6>")
+
+  $innerDiv.append($coyBadge)
+  $innerDiv.append($infoBadge)
+  // $innerDiv.append($statusBadge)
+
+  // Create outer div
+  let $outerDiv = $('<div>')
+  $outerDiv.addClass('list-group-item list-group-item-action dark-mode-bg company-color')
+  $outerDiv.append($innerDiv)
+
+  return $outerDiv
 }
 
 // symbol is the NASDAQ Symbol
@@ -80,21 +129,21 @@ function createSellingListItem(symbol, numQty, currPrice) {
   // Create Inner Div
   $innerDiv = $('<div>')
   $innerDiv.addClass('d-flex justify-content-between')
-  let headingText = symbol + " | " + "Selling " + numQty + " Shares"
-  $coyBadge = createBadge("badge-coy", headingText, "<h5>")
-  let infoText = "Buy Price/Share: $" + currPrice
-  $infoBadge = createBadge("badge-info", infoText, "<h5>")
+  let headingText = symbol + " | " + numQty + " Shares"
+  let $coyBadge = createBadge("badge-coy", headingText, "<h6>")
+  // let infoText = "Buy Price/Share: $" + currPrice
+  // let $infoBadge = createBadge("badge-info", infoText, "<h6>")
   let $thirdBadge
   // Calculate total cost
   let totalCost = currPrice * numQty
   totalCost = totalCost.toFixed(2)
   if (parseFloat($.session.get('credits')) < parseFloat(totalCost)) {
-    $thirdBadge = createBadge("badge-danger", "Total Cost: $" + totalCost, "<h5>")
+    $thirdBadge = createBadge("badge-danger", "Cost: $" + totalCost, "<h6>")
   } else {
-    $thirdBadge = createBadge("badge-light", "Total Cost: $" + totalCost, "<h5>")
+    $thirdBadge = createBadge("badge-light", "Cost: $" + totalCost, "<h6>")
   }
   $innerDiv.append($coyBadge)
-  $innerDiv.append($infoBadge)
+  // $innerDiv.append($infoBadge)
   $innerDiv.append($thirdBadge)
 
   // Create outer div
@@ -137,22 +186,7 @@ function createButton(isSelling, currCost) {
   return $button
 }
 
-function checkButtonStatus(symbol, numSelling, qtyUserHas) {
-  // // If user does not have the exact quantity of what the other user wants, then disable button
-  // if (qtyUserHas !== numSelling) {
-  //   return false
-  // }
-  // for (let i = 0; i < userPortfolio.length; i++) {
-  //   if (userPortfolio[i].symbol === symbol) {
-  //     // User has that particular symbol that the other user wants exactly. Do not disable button
-  //     return true
-  //   }
-  // }
-  // return false
-  
-}
-
-function createModal(isSelling, symbol, qtyInSellOrder, currPrice, symbolStr) {
+function createModal(isSelling, symbol, qtyInSellOrder, currPrice, symbolStr, order_id) {
   let commaIndex
   let qty
   let prevPrice
@@ -169,7 +203,7 @@ function createModal(isSelling, symbol, qtyInSellOrder, currPrice, symbolStr) {
   // Modal Header
   let $modalHeader = $('<div>')
   $modalHeader.addClass('modal-header')
-  let $modalTitle = $('<h5>')
+  let $modalTitle = $('<h6>')
   $modalTitle.addClass('modal-title')
   if (isSelling) {
     $modalTitle.attr('id', 'sellPortfolioLabel')
@@ -195,11 +229,11 @@ function createModal(isSelling, symbol, qtyInSellOrder, currPrice, symbolStr) {
   $modalBody.addClass('modal-body')
   if (isSelling) {
     let totalGain = currPrice * qty
-    totalGain = cleanNumber(totalGain)
-    $modalBody.append('You will gain ' + totalGain + ' Credits.')
+    totalGain = totalGain.toFixed(2)
+    $modalBody.append('You will gain ' + totalGain + ' Credits if somebody buys your shares in the market.')
   } else {
     let totalLoss = currPrice * qtyInSellOrder
-    totalLoss = cleanNumber(totalLoss)
+    totalLoss = totalLoss.toFixed(2)
     $modalBody.append('You will lose ' + totalLoss + ' Credits.')
   }
 
@@ -216,9 +250,54 @@ function createModal(isSelling, symbol, qtyInSellOrder, currPrice, symbolStr) {
   if (isSelling) {
     $footerCurrButton.addClass('btn btn-danger')
     $footerCurrButton.append('Sell')
+    $footerCurrButton.click(function() {
+      console.log("Sell Button Clicked!")
+      // User wants to sell an order
+      $.ajax({
+        method: "POST",
+        url: BACKEND_URL,
+        data: {
+          requestType: SELL_PORTFOLIO_SHARE,
+          email: $.session.get('email'),
+          symbol: symbol,
+          qtyToSell: qty
+        }
+      }).done(function(results) {
+        results = JSON.parse(results)
+        console.log(SELL_PORTFOLIO_SHARE, results)
+        // Update the page again
+        location.reload()
+        // Update User's Credit in Session
+      })
+    })
   } else {
     $footerCurrButton.addClass('btn btn-success')
     $footerCurrButton.append('Buy')
+    $footerCurrButton.click(function() {
+      console.log("Buy Button Clicked!")
+      let totalCredits = currPrice * qtyInSellOrder
+      // User buys an order
+      $.ajax({
+        method: "POST",
+        url: BACKEND_URL, 
+        data: {
+          requestType: BUY_SHARES,
+          email: $.session.get('email'), // Buying User
+          symbol: symbol,
+          qtyToBeBought: parseInt(qtyInSellOrder),
+          priceBoughtFor: parseFloat(currPrice),
+          orderToBeUpdated: parseInt(order_id), // Selling User from here
+          credits: (parseFloat(totalCredits)).toFixed(2) // Credits Involved
+        }
+      }).done(function(results) {
+        results = JSON.parse(results)
+        console.log(BUY_SHARES, results)
+        // Update the page again
+        location.reload()
+        // Update User's Credits in Session
+
+      })
+    })
   }
   $modalFooter.append($footerCloseButton)
   $modalFooter.append($footerCurrButton)
@@ -268,7 +347,7 @@ function genPortfolio() {
     }
   }).done(function(results) {
     results = JSON.parse(results)
-    console.log(results)
+    console.log(GET_USER_PORTFOLIO, results)
     // Check if error
     if (results.status === "Error") {
       console.log(results.status)
@@ -302,6 +381,8 @@ function genPortfolio() {
           }
         }
       }
+      // After this, generate pending orders that user might have
+      genPendingOrders()
       // After this, generate Sell orders
       genSellOrders()
     }
@@ -324,15 +405,15 @@ function createPortfolioListItem(symbol, currPrice, symbolStr) {
   $firstInnerDiv.addClass('d-flex justify-content-between')
   const shares = cleanNumber(qty)
   let headingText = symbol + " | " + shares + " Shares"
-  let $coyBadge = createBadge("badge-coy", headingText, "<h3>")
-  let $boughtForBadge = createBadge("badge-light", "Bought For: $" + prevPrice, "<h3>")
+  let $coyBadge = createBadge("badge-coy", headingText, "<h6>")
+  let $boughtForBadge = createBadge("badge-light", "Bought For: $" + prevPrice, "<h6>")
   $firstInnerDiv.append($coyBadge)
   $firstInnerDiv.append($boughtForBadge)
 
   // Create 2nd Inner Div
   let $secInnerDiv = $('<div>')
   $secInnerDiv.addClass('d-flex justify-content-between')
-  let $sellPriceBadge = createBadge("badge-coy", "Today's Selling Price: $" + currPrice, "<h5>")
+  let $sellPriceBadge = createBadge("badge-coy", "Today's Price: $" + currPrice, "<h6>")
   // Check if profit or loss
   let $profitBadge = createProfitBadge(prevPrice, currPrice, qty)
 
@@ -357,16 +438,17 @@ function createProfitBadge(prevPrice, currPrice, qty) {
   const totalPrevPrice = Math.floor(prevPrice * qty)
   const totalCurrPrice = Math.floor(currPrice * qty)
   let percProfit = calcProfit(totalPrevPrice, totalCurrPrice)
+  percProfit = percProfit.toFixed(2)
   let $profitBadge;
   if (percProfit == 0) {
     percProfit = "Profit: +" + percProfit + "%"
-    $profitBadge = createBadge("badge-secondary", percProfit, "<h5>")
+    $profitBadge = createBadge("badge-secondary", percProfit, "<h6>")
   } else if (percProfit > 0) {
     percProfit = "Profit: +" + percProfit + "%"
-    $profitBadge = createBadge("badge-success", percProfit, "<h5>")
+    $profitBadge = createBadge("badge-success", percProfit, "<h6>")
   } else {
     percProfit = "Profit: -" + percProfit + "%"
-    $profitBadge = createBadge("badge-danger", percProfit, "<h5>")
+    $profitBadge = createBadge("badge-danger", percProfit, "<h6>")
   }
   return $profitBadge
 }

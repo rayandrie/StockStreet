@@ -40,7 +40,7 @@
                   <h5><span class="badge badge-coy">Sell Price Today: 12345</span></h5>
                   <h5><span class="badge badge-secondary">Profit: 3%</span></h5>
                 </div>
-                <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#sellPortfolioModal">Block level button</button>
+                <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#sellPortfolioModal">Sell your Shares</button>
               </div> -->
             </div>
           </div>
@@ -71,9 +71,36 @@
       </div>
     </div>
   </div>
+  <!-- Container for The User's Pending Orders -->
+  <div class="container-fluid">
+    <div class="row justify-content-center text-center">
+      <div class="col align-self-center">
+        <div class="card background-coy-color slight-margin-top">
+          <!-- Your Stocks Header -->
+          <div class="card-header cath-font two-em font-weight-bolder header-bg-color coy-headings">
+            Your Pending Auctions:
+          </div>
+          <!-- List of User's Stocks and Credits -->
+          <div class="card-body body-bg-color">
+            <div class="list-group" id="pendingOrders">
+              <!-- First List Item -->
+              <!-- <div class="list-group-item list-group-item-action dark-mode-bg company-color">
+                <div class="d-flex justify-content-between">
+                  <h5><span class="badge badge-coy">AAPL | Selling 30 Shares</span></h5>
+                  <h5><span class="badge badge-info">Sell Price Today: 12345</span></h5>
+                  <h5><span class="badge badge-light">Order Status: Open</span></h5>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="slight-margin-top-bot">
     <!-- Slight Margin between Your Stocks and Others -->
   </div>
+
   <!-- Container for Current Stock Prices, Current Orders -->
   <div class="container-fluid">
     <div class="row">

@@ -36,7 +36,7 @@ $(document).ready(function() {
         $("#errVal").append($valPill)
       } else {
         // Set a Session
-        setSession(email, results.credits)
+        setSession(email)
         // Redirect to Portfolio Page
         console.log("Redirecting to Portfolio Page...")
         window.location.replace("../PortfolioPage/portfolio.php")
